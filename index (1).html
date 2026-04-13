@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="周防大島に静かに佇む、明治建築の一棟貸しの宿。歴史を紡ぐ豊武屋敷で、暮らすように滞在する特別な時間を。">
+<meta property="og:title" content="一棟貸しの宿 豊武屋敷">
+<meta property="og:description" content="周防大島に静かに佇む、明治建築の一棟貸しの宿。">
+<title>一棟貸しの宿 豊武屋敷 | 山口県周防大島</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --dark: #2c1a0e;
+    --mid: #5a3220;
+    --warm: #8b5e3c;
+    --accent: #c3a19d;
+    --gold: #b8963e;
+    --cream: #f7f2ea;
+    --light: #fdf9f4;
+    --white: #ffffff;
+    --gray: #8a7a6a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Shippori Mincho', serif;
+    background: var(--light);
+    color: var(--ink);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ===================== NAV ===================== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 64px;
+    background: rgba(247, 242, 234, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(195, 161, 157, 0.3);
+    transition: all .3s;
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    display: block;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: .25em;
+    color: var(--warm);
+    margin-top: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: .1em;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color .2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-reserve {
+    background: var(--dark);
+    color: var(--cream) !important;
+    padding: 8px 20px;
+    border-radius: 1px;
+    font-size: 12px !important;
+    letter-spacing: .12em;
+    transition: background .2s !important;
+  }
+
+  .nav-reserve:hover { background: var(--mid) !important; color: var(--cream) !important; }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(26,18,8,0.3) 0%, rgba(26,18,8,0.6) 100%),
+      url('https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600,height=1067/image/532932244/a77e1adb-7cf0-4126-9124-be2f746d2277.jpg') center/cover no-repeat;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    color: var(--cream);
+    padding: 0 24px;
+    animation: fadeUp .8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-en {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 10px;
+    letter-spacing: .35em;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    letter-spacing: .2em;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(247,242,234,.75);
+    margin-bottom: 32px;
+  }
+
+  .hero-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 32px;
+  }
+
+  .hero-catch {
+    font-size: 14px;
+    letter-spacing: .08em;
+    color: rgba(247,242,234,.85);
+    line-height: 2;
+    margin-bottom: 40px;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--cream);
+    padding: 12px 40px;
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-decoration: none;
+    transition: all .3s;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .hero-btn:hover {
+    background: var(--accent);
+    color: var(--dark);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(247,242,234,.5);
+    font-size: 9px;
+    letter-spacing: .2em;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: rgba(247,242,234,.3);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ===================== SECTIONS ===================== */
+  section { padding: 80px 24px; }
+
+  .container { max-width: 900px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: .35em;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: .12em;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .section-rule {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .section-text {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 2.2;
+    letter-spacing: .04em;
+  }
+
+  /* ===================== ABOUT ===================== */
+  #about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .about-grid.reverse { direction: rtl; }
+  .about-grid.reverse > * { direction: ltr; }
+
+  .about-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-text-block .section-text { margin-top: 16px; }
+
+  .story-box {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 32px 40px;
+    margin-top: 48px;
+  }
+
+  .story-box p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 2.4;
+    letter-spacing: .04em;
+  }
+
+  /* ===================== FACILITY ===================== */
+  #facility { background: var(--cream); }
+
+  .facility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .facility-card {
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  .facility-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+
+  .facility-card:hover img { transform: scale(1.03); }
+
+  .facility-card-body {
+    padding: 20px 24px;
+  }
+
+  .facility-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+
+  .facility-card-text {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.9;
+  }
+
+  .amenity-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 48px;
+  }
+
+  .amenity-item {
+    background: var(--white);
+    padding: 16px;
+    text-align: center;
+    border: 1px solid rgba(195,161,157,.3);
+  }
+
+  .amenity-item-icon { font-size: 20px; margin-bottom: 6px; }
+
+  .amenity-item-text {
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: .04em;
+    line-height: 1.6;
+  }
+
+  /* ===================== PRICE ===================== */
+  #price { background: var(--white); }
+
+  .price-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(195,161,157,.4);
+  }
+
+  .price-card {
+    text-align: center;
+    padding: 32px 16px;
+    background: var(--white);
+    position: relative;
+  }
+
+  .price-card + .price-card {
+    border-left: 1px solid rgba(195,161,157,.4);
+  }
+
+  .price-card-label {
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .price-card-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: .08em;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(195,161,157,.3);
+  }
+
+  .price-card-amount {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--mid);
+    letter-spacing: .02em;
+  }
+
+  .price-card-amount sup { font-size: 14px; vertical-align: super; }
+  .price-card-amount sub { font-size: 12px; color: var(--gray); font-weight: 400; }
+
+  .price-card-note {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 8px;
+    line-height: 1.7;
+  }
+
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+
+  .price-table th {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: .06em;
+    font-size: 12px;
+  }
+
+  .price-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(195,161,157,.25);
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table tr:nth-child(even) td { background: var(--cream); }
+
+  .price-highlight { color: #8b1a1a; font-weight: 700; }
+
+  .price-notes {
+    background: var(--cream);
+    padding: 24px 32px;
+    margin-bottom: 40px;
+  }
+
+  .price-notes ul { list-style: none; }
+
+  .price-notes li {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 2;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .price-notes li::before {
+    content: '※';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+  }
+
+  /* ===================== FOOD ===================== */
+  #food { background: var(--cream); }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .food-card {
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  .food-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .food-card-body { padding: 24px; }
+
+  .food-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: .06em;
+    margin-bottom: 4px;
+  }
+
+  .food-card-price {
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: .06em;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .food-card-text {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.9;
+  }
+
+  /* ===================== RESERVE ===================== */
+  #reserve {
+    background: var(--dark);
+    text-align: center;
+    padding: 80px 24px;
+  }
+
+  #reserve .section-label { color: var(--accent); }
+  #reserve .section-title { color: var(--cream); }
+  #reserve .section-rule { background: var(--gold); margin: 0 auto 32px; }
+  #reserve .section-text { color: rgba(247,242,234,.7); text-align: center; }
+
+  .reserve-info {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+
+  .reserve-info-item { text-align: center; }
+
+  .reserve-info-label {
+    font-size: 10px;
+    letter-spacing: .2em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .reserve-info-value {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    color: var(--cream);
+    letter-spacing: .06em;
+  }
+
+  .reserve-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 16px 48px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-decoration: none;
+    transition: all .3s;
+    font-weight: 700;
+  }
+
+  .btn-primary:hover { background: #d4a94a; }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--cream);
+    padding: 16px 48px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-decoration: none;
+    transition: all .3s;
+  }
+
+  .btn-secondary:hover { background: rgba(195,161,157,.2); }
+
+  .calendar-wrap {
+    margin: 48px auto 0;
+    max-width: 700px;
+  }
+
+  .calendar-wrap iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+    border-radius: 2px;
+    opacity: .9;
+  }
+
+  /* ===================== ACCESS ===================== */
+  #access { background: var(--white); }
+
+  .access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 16px;
+  }
+
+  .access-map {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border: none;
+    display: block;
+  }
+
+  .access-info { }
+
+  .access-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(195,161,157,.3);
+  }
+
+  .access-item:last-child { border-bottom: none; }
+
+  .access-item-label {
+    font-size: 10px;
+    letter-spacing: .2em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .access-item-value {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 2;
+    letter-spacing: .04em;
+  }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: var(--ink);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: .2em;
+    margin-bottom: 4px;
+  }
+
+  .footer-sub {
+    font-size: 10px;
+    letter-spacing: .25em;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: rgba(247,242,234,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-copy {
+    font-size: 10px;
+    color: rgba(247,242,234,.3);
+    letter-spacing: .1em;
+  }
+
+  .footer-sns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .footer-sns a {
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: rgba(247,242,234,.5);
+    text-decoration: none;
+    border: 1px solid rgba(247,242,234,.15);
+    padding: 6px 16px;
+    transition: all .2s;
+  }
+
+  .footer-sns a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    .about-grid,
+    .about-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 24px; }
+
+    .facility-grid,
+    .food-grid { grid-template-columns: 1fr; }
+
+    .price-cards { grid-template-columns: 1fr; }
+    .price-card + .price-card { border-left: none; border-top: 1px solid rgba(195,161,157,.4); }
+
+    .amenity-list { grid-template-columns: repeat(2, 1fr); }
+
+    .access-grid { grid-template-columns: 1fr; }
+
+    .reserve-info { gap: 24px; }
+
+    section { padding: 56px 20px; }
+
+    .story-box { padding: 24px; }
+  }
+
+  /* ===================== SCROLL ANIMATION ===================== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    豊武屋敷
+    <span>TOYOTAKE YASHIKI</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">屋敷について</a></li>
+    <li><a href="#facility">施設</a></li>
+    <li><a href="#price">料金</a></li>
+    <li><a href="#food">お食事</a></li>
+    <li><a href="#access">アクセス</a></li>
+    <li><a href="https://page.line.me/306rfgbr" target="_blank" class="nav-reserve">ご予約</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-en">TOYOTAKE YASHIKI · SUOU OSHIMA</div>
+    <h1 class="hero-title">豊武屋敷</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-catch">
+      歴史を紡ぐ、一棟貸しの宿。<br>
+      タイムスリップしたかのようなこの場所で<br>
+      暮らすように、滞在する。
+    </p>
+    <a href="#reserve" class="hero-btn">ご予約・空き確認</a>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">ABOUT</span>
+      <h2 class="section-title">豊武屋敷とは</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="about-grid fade-in">
+      <img class="about-img"
+        src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/519747649/ee124a02-3998-4f7c-a035-4d02b696a90f.jpg"
+        alt="豊武屋敷の由来">
+      <div class="about-text-block">
+        <span class="section-label">HISTORY</span>
+        <h3 class="section-title" style="font-size:20px;">豊武屋敷の由来と家名の始まり</h3>
+        <div class="section-rule"></div>
+        <p class="section-text">
+          豊武屋敷のルーツは戦国時代にまで遡ります。この地で海商として栄え、その影響力と武力が豊臣秀吉の目に留まり、「豊臣の"豊"」と「武に長けているの"武"」の二文字を拝領し、「豊武」の家名をいただいたと伝えられています。
+        </p>
+      </div>
+    </div>
+
+    <div class="about-grid reverse fade-in" style="margin-top:48px;">
+      <img class="about-img"
+        src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/519747610/482e57a0-5f77-458e-99c8-83d18983aeb9.jpg"
+        alt="明治に建てられた屋敷">
+      <div class="about-text-block">
+        <span class="section-label">ARCHITECTURE</span>
+        <h3 class="section-title" style="font-size:20px;">明治に建てられた屋敷の魅力</h3>
+        <div class="section-rule"></div>
+        <p class="section-text">
+          現在の屋敷は、数代前の明治時代に建てられたもの。長屋門、蔵、母屋で構成され、長州宮大工により建築されました。当時の意匠が今も屋敷の随所に息づいています。歴史を紡いできたこのお屋敷で、「当時の暮らしを感じながら滞在できる」ことが当宿の大きな魅力のひとつです。
+        </p>
+      </div>
+    </div>
+
+    <div class="story-box fade-in">
+      <p>
+        豊武屋敷は130年以上前に建てられた、歴史ある建物です。長屋門と塀によりぐるりと空間を切り取られたその一角は、まるでそこだけタイムスリップしたかのような感覚を味わえる場所。サッシも入っていない、昔のままの状態で大切にされてきたこの家は、木枠の雨戸と障子を開放すると心地良い風が吹き抜けます。<br><br>
+        海に囲まれた周防大島の中でも特に静かで穏やかな東部地区に位置しており、聞こえてくるのは鳥の声だけ。母屋だけでなく空間を丸ごと一組様で貸し切っていただけます。周防大島の綺麗な海や観光を楽しみつつ、忙しい日常から少し距離を置いて、この特別な空間で、是非ゆっくりと「暮らすように滞在する」時間を過ごしていただけたらと思います。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section id="facility">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">FACILITY</span>
+      <h2 class="section-title">施設のご案内</h2>
+      <div class="section-rule"></div>
+      <p class="section-text">母屋・蔵・長屋門の3棟から成る屋敷を一組様で貸し切り。宿泊定員は最大8名様まで。</p>
+    </div>
+
+    <div class="facility-grid" style="margin-top:40px;">
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/519747751/088b5e1d-e073-4e6c-8381-f84c059e3488.jpg" alt="母屋">
+        <div class="facility-card-body">
+          <div class="facility-card-title">母屋・広間</div>
+          <p class="facility-card-text">縁側や大きな広間、昔ながらの土間の台所などがあり、「暮らし」を感じながら滞在いただけます。座椅子などもご準備しています。エアコン・無料Wi-Fi・プロジェクター完備（テレビなし）。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/519747753/7398c204-0557-40d8-a9e4-b9686261b8f4.jpg" alt="寝室">
+        <div class="facility-card-body">
+          <div class="facility-card-title">寝室（全3室）</div>
+          <p class="facility-card-text">1階に2室（各ベッド2台）、2階に1室（すのこ＋マットレス）をご用意。シャンプー・コンディショナー・バスタオル・歯ブラシなどアメニティも充実。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/532960339/f0da5904-5800-4830-bd33-8a97d4f03ea7.jpg" alt="蔵">
+        <div class="facility-card-body">
+          <div class="facility-card-title">蔵</div>
+          <p class="facility-card-text">隠れ家のようなくつろぎスペース。レコードプレイヤーや本もご準備しています。どうぞごゆっくりお過ごしください。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=688;0;740;0,width=1280,height=1280/image/532960374/fd6dbceb-01da-4523-9d15-2bdfa8359edc.jpg" alt="長屋門">
+        <div class="facility-card-body">
+          <div class="facility-card-title">長屋門（BBQスペース）</div>
+          <p class="facility-card-text">屋根のある屋外フリースペース。雨天でもBBQが楽しめます。BBQコンロ・炭・紙皿などの備品もすべてご準備しています。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- アメニティ -->
+    <div class="amenity-list fade-in">
+      <div class="amenity-item">
+        <div class="amenity-item-icon">🌐</div>
+        <div class="amenity-item-text">無料Wi-Fi</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">❄️</div>
+        <div class="amenity-item-text">エアコン4台</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">🎬</div>
+        <div class="amenity-item-text">プロジェクター・スクリーン</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">🍳</div>
+        <div class="amenity-item-text">IH・調理器具一式</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">🚿</div>
+        <div class="amenity-item-text">シャンプー・ボディソープ</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">🅿️</div>
+        <div class="amenity-item-text">無料駐車場 4〜6台</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">👶</div>
+        <div class="amenity-item-text">ベビーベッド（無料）</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">👕</div>
+        <div class="amenity-item-text">洗濯機・洗剤</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-item-icon">🏖️</div>
+        <div class="amenity-item-text">海岸まで徒歩1分</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">PRICE</span>
+      <h2 class="section-title">料金のご案内</h2>
+      <div class="section-rule"></div>
+      <p class="section-text">一棟貸し料金・税込。2名様まで下記同一料金。</p>
+    </div>
+
+    <div class="price-cards fade-in" style="margin-top:32px;">
+      <div class="price-card">
+        <div class="price-card-label">WEEKDAY</div>
+        <div class="price-card-name">平日（日〜木）</div>
+        <div class="price-card-amount"><sup>¥</sup>23,000<sub>/棟</sub></div>
+        <div class="price-card-note">2名様まで同料金</div>
+      </div>
+      <div class="price-card">
+        <div class="price-card-label">WEEKEND</div>
+        <div class="price-card-name">週末・祝前日（金・土）</div>
+        <div class="price-card-amount"><sup>¥</sup>27,000<sub>/棟</sub></div>
+        <div class="price-card-note">2名様まで同料金</div>
+      </div>
+      <div class="price-card">
+        <div class="price-card-label">PEAK</div>
+        <div class="price-card-name">お盆・年末年始</div>
+        <div class="price-card-amount"><sup>¥</sup>30,000<sub>/棟</sub></div>
+        <div class="price-card-note">8/8〜15・12/30〜1/3</div>
+      </div>
+    </div>
+
+    <table class="price-table fade-in">
+      <tr>
+        <th>項目</th>
+        <th>金額・内容</th>
+      </tr>
+      <tr>
+        <td>3名様以上の追加料金</td>
+        <td><span class="price-highlight">＋¥7,000 / 1名につき</span>（例：大人4名 → ¥37,000〜）</td>
+      </tr>
+      <tr>
+        <td>連泊割引</td>
+        <td><span class="price-highlight">2泊目以降 20% オフ</span></td>
+      </tr>
+      <tr>
+        <td>未就学児（ベッド添い寝）</td>
+        <td>無料（ベビーベッドも1台まで無料）</td>
+      </tr>
+      <tr>
+        <td>チェックイン</td>
+        <td>14:00 以降</td>
+      </tr>
+      <tr>
+        <td>チェックアウト</td>
+        <td>11:00 まで</td>
+      </tr>
+      <tr>
+        <td>お支払い方法</td>
+        <td>現金・クレジットカード（チェックイン時／カードは事前にお知らせください）</td>
+      </tr>
+      <tr>
+        <td>ご予約締切</td>
+        <td>3日前まで</td>
+      </tr>
+    </table>
+
+    <div class="price-notes fade-in">
+      <ul>
+        <li>料金はすべて税込価格です。</li>
+        <li>お食事は別途料金のオプションとなります。</li>
+        <li>予約は公式LINE「豊武屋敷」にて承ります。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD -->
+<section id="food">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">FOOD OPTION</span>
+      <h2 class="section-title">お食事オプション</h2>
+      <div class="section-rule"></div>
+      <p class="section-text">チェックイン時にお持ち致します。ご予約の際に公式LINEにてお申し付けください。</p>
+    </div>
+
+    <div class="food-grid" style="margin-top:40px;">
+
+      <div class="food-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=155;0;155;0,width=800,height=600/image/520318358/6cf58845-4e5f-42dc-9c76-ffda54878a7e.jpg" alt="手巻き寿司セット">
+        <div class="food-card-body">
+          <div class="food-card-title">鮨や大将の手巻き寿司セット</div>
+          <div class="food-card-price">¥4,000 / 1人前</div>
+          <p class="food-card-text">白身・生本鮪中トロ・車海老・イクラ・煮穴子・鶏胸肉の塩麹ハム・野菜・ツナなど。みんなでワイワイ楽しめる手巻き寿司です。</p>
+        </div>
+      </div>
+
+      <div class="food-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;219;0;219,width=1280,height=960/image/519747733/f812760a-be6c-43c7-a969-5428a533ab54.jpg" alt="大島プレミアム朝食セット">
+        <div class="food-card-body">
+          <div class="food-card-title">大島プレミアム朝食セット</div>
+          <div class="food-card-price">¥1,000 / 1人前</div>
+          <p class="food-card-text">大島のこだわりのお店で作られたプレミアム朝食。ワンハートのミニパン・MIKKEのはちみつスティック・cafe.de.costaricaのドリップコーヒー。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 出張にぎり -->
+    <div class="story-box fade-in" style="margin-top:32px;">
+      <span class="section-label">SPECIAL OPTION</span>
+      <h3 style="font-family:'Noto Serif JP',serif;font-size:17px;color:var(--dark);letter-spacing:.08em;margin-bottom:12px;">鮨や大将の出張にぎり寿司</h3>
+      <p style="font-size:13px;color:var(--mid);line-height:2.2;">
+        目の前で握る季節の鮨を豊武屋敷で。予約が可能な日程であればご利用可能です。<br>
+        通常 ¥7,500 → <strong style="color:#8b1a1a;">¥6,500 / 1人（特別価格）</strong><br>
+        ※出張費 ¥10,000 が別途かかります（交通費無料）<br>
+        ※4名様以上からご利用いただけます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section id="reserve">
+  <div class="container">
+    <span class="section-label">RESERVATION</span>
+    <h2 class="section-title">ご予約・空き確認</h2>
+    <div class="section-rule"></div>
+    <p class="section-text">
+      公式LINE「豊武屋敷」にてご予約を承ります。<br>
+      お電話でのお問い合わせもお気軽にどうぞ。
+    </p>
+
+    <div class="reserve-info">
+      <div class="reserve-info-item">
+        <div class="reserve-info-label">LINE</div>
+        <div class="reserve-info-value">公式LINE「豊武屋敷」</div>
+      </div>
+      <div class="reserve-info-item">
+        <div class="reserve-info-label">TEL</div>
+        <div class="reserve-info-value">050-3592-2303</div>
+      </div>
+      <div class="reserve-info-item">
+        <div class="reserve-info-label">締切</div>
+        <div class="reserve-info-value">ご利用日の3日前まで</div>
+      </div>
+    </div>
+
+    <div class="reserve-btns">
+      <a href="https://page.line.me/306rfgbr" target="_blank" class="btn-primary">公式LINEで予約する</a>
+      <a href="tel:05035922303" class="btn-secondary">電話で問い合わせる</a>
+    </div>
+
+    <div class="calendar-wrap">
+      <p style="font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;">— 予約可能状況カレンダー —</p>
+      <iframe src="https://calendar.google.com/calendar/embed?src=32309a0b277746bd7aa1d3894464f0ed7ed51689778e6761cf0b0be62f618829%40group.calendar.google.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0" style="border:0;background:transparent;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section id="access">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">ACCESS</span>
+      <h2 class="section-title">アクセス</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="access-grid fade-in">
+      <iframe class="access-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.5!2d132.35!3d33.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDUyJzA3LjIiTiAxMzLCsDIxJzAzLjYiRQ!5e0!3m2!1sja!2sjp!4v1"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <div class="access-info">
+        <div class="access-item">
+          <div class="access-item-label">住所</div>
+          <div class="access-item-value">
+            〒742-2516<br>
+            山口県大島郡周防大島町和田586
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="access-item-label">お車でお越しの方</div>
+          <div class="access-item-value">
+            岩国空港から 約1時間20分<br>
+            JR大畠駅から 約40分<br>
+            新岩国駅から 約1時間15分<br>
+            玖珂ICから 約1時間<br>
+            防予フェリー伊保田港から 約7分
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="access-item-label">公共交通機関</div>
+          <div class="access-item-value">
+            JR大畠駅 → 防長バス大島線<br>
+            → 周防平野で下車<br>
+            → 町営バス油田森野線 → 周防和田<br>
+            ※バスの本数が少ないため事前に時刻表をご確認ください。
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="access-item-label">駐車場</div>
+          <div class="access-item-value">無料 4〜6台</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">豊武屋敷</div>
+  <div class="footer-sub">TOYOTAKE YASHIKI · SUOU OSHIMA</div>
+  <div class="footer-sns">
+    <a href="https://instagram.com/toyotake_yashiki/" target="_blank">Instagram</a>
+    <a href="https://page.line.me/306rfgbr" target="_blank">LINE 予約</a>
+  </div>
+  <div class="footer-links">
+    <a href="#about">屋敷について</a>
+    <a href="#facility">施設</a>
+    <a href="#price">料金</a>
+    <a href="#food">お食事</a>
+    <a href="#access">アクセス</a>
+  </div>
+  <div class="footer-copy">© 2025 豊武屋敷. All rights reserved.</div>
+</footer>
+
+<script>
+  // スクロールアニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ナビのスクロール処理
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      nav.style.boxShadow = '0 2px 20px rgba(26,18,8,0.1)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

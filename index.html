@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta name="google-site-verification" content="ks1oaE7AqU58TFLKHZB66INZehRy4-uHlj_oe0LMPWk" />
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="周防大島に静かに佇む、明治建築の一棟貸しの宿。歴史を紡ぐ豊武屋敷で、暮らすように滞在する特別な時間を。">
@@ -741,7 +741,35 @@
     .story-box { padding: 24px; }
   }
 
-  /* ===================== SCROLL ANIMATION ===================== */
+  /* ===================== GALLERY ===================== */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    aspect-ratio: 1;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease, opacity .3s ease;
+    opacity: .85;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -767,6 +795,7 @@
     <li><a href="#facility">施設</a></li>
     <li><a href="#price">料金</a></li>
     <li><a href="#food">お食事</a></li>
+    <li><a href="#gallery">ギャラリー</a></li>
     <li><a href="#access">アクセス</a></li>
     <li><a href="https://page.line.me/306rfgbr" target="_blank" class="nav-reserve">ご予約</a></li>
   </ul>
@@ -849,7 +878,7 @@
     <div class="facility-grid" style="margin-top:40px;">
 
       <div class="facility-card fade-in">
-        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/519747751/088b5e1d-e073-4e6c-8381-f84c059e3488.jpg" alt="母屋">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1280,height=910/image/532941820/2e44d22c-5ce8-4180-958c-445e5fd4c129.jpg" alt="豊武屋敷全景">
         <div class="facility-card-body">
           <div class="facility-card-title">母屋・広間</div>
           <p class="facility-card-text">縁側や大きな広間、昔ながらの土間の台所などがあり、「暮らし」を感じながら滞在いただけます。座椅子などもご準備しています。エアコン・無料Wi-Fi・プロジェクター完備（テレビなし）。</p>
@@ -857,7 +886,7 @@
       </div>
 
       <div class="facility-card fade-in">
-        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/519747753/7398c204-0557-40d8-a9e4-b9686261b8f4.jpg" alt="寝室">
+        <img src="./7017.JPG" alt="寝室">
         <div class="facility-card-body">
           <div class="facility-card-title">寝室（全3室）</div>
           <p class="facility-card-text">1階に2室（各ベッド2台）、2階に1室（すのこ＋マットレス）をご用意。シャンプー・コンディショナー・バスタオル・歯ブラシなどアメニティも充実。</p>
@@ -865,7 +894,7 @@
       </div>
 
       <div class="facility-card fade-in">
-        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/532960339/f0da5904-5800-4830-bd33-8a97d4f03ea7.jpg" alt="蔵">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=748;0;1751;0,width=1280,height=960/image/519352675/d6c749f9-831d-4651-b114-a1cbfa0b5f8f.jpg" alt="蔵外観">
         <div class="facility-card-body">
           <div class="facility-card-title">蔵</div>
           <p class="facility-card-text">隠れ家のようなくつろぎスペース。レコードプレイヤーや本もご準備しています。どうぞごゆっくりお過ごしください。</p>
@@ -873,10 +902,42 @@
       </div>
 
       <div class="facility-card fade-in">
-        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=688;0;740;0,width=1280,height=1280/image/532960374/fd6dbceb-01da-4523-9d15-2bdfa8359edc.jpg" alt="長屋門">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=1461;283;1461;283,width=1280,height=960/image/519352939/b3096c86-bfa4-48f3-a5ef-f0a467b06612.jpg" alt="長屋門外観">
         <div class="facility-card-body">
           <div class="facility-card-title">長屋門（BBQスペース）</div>
           <p class="facility-card-text">屋根のある屋外フリースペース。雨天でもBBQが楽しめます。BBQコンロ・炭・紙皿などの備品もすべてご準備しています。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=1280,height=960/image/532960435/f2fcf79b-ff4c-48f3-9954-d67e590385af.jpg" alt="キッチン">
+        <div class="facility-card-body">
+          <div class="facility-card-title">キッチン・土間台所</div>
+          <p class="facility-card-text">IHコンロ・炊飯器・電子レンジ・トースター・各種調理器具を完備。ホットプレート2台・卓上IHコンロと鍋もご準備しています。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;305;0;306,width=1280,height=1280/image/532960375/c8c9b5a1-49c1-4dd7-b3e6-4ef4955ef118.jpg" alt="お風呂">
+        <div class="facility-card-body">
+          <div class="facility-card-title">お風呂・水回り</div>
+          <p class="facility-card-text">シャンプー・コンディショナー・ボディソープ・洗顔フォームを完備。ウォシュレット付きトイレ。洗濯機（洗剤・柔軟剤あり）も完備しています。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;714;0;714,width=1280,height=1280/image/532940108/596d75e2-cb6d-44d9-9bde-e80a67ae988b.jpg" alt="海岸">
+        <div class="facility-card-body">
+          <div class="facility-card-title">すぐそこに海</div>
+          <p class="facility-card-text">歩いて1分で海岸へ。徒歩10分ほどの距離には海水浴場もございます。周防大島の美しい海を満喫できます。</p>
+        </div>
+      </div>
+
+      <div class="facility-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=1280,height=1280/image/532943133/8b53b730-8f2e-482f-9a06-f0d80f648052.jpg" alt="母屋2階">
+        <div class="facility-card-body">
+          <div class="facility-card-title">母屋の2階</div>
+          <p class="facility-card-text">豊武家の歴史が詰まった生活品や骨董品などを展示。タイムスリップしたような感覚を味わえる特別な空間です。</p>
         </div>
       </div>
 
@@ -1032,6 +1093,26 @@
 
     </div>
 
+      <div class="food-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=800;0;412;0,width=800,height=600/image/534400912/d2951fc5-6a8d-48f7-a4f2-a757c90a05b2.jpg" alt="和牛BBQセット">
+        <div class="food-card-body">
+          <div class="food-card-title">和牛BBQセット（大島本陣茶屋）</div>
+          <div class="food-card-price">¥3,500〜 / 1人前</div>
+          <p class="food-card-text">和牛・豚・鶏・季節の野菜・おにぎり。ご要望やご予算に合わせて相談可能。BBQグリル・炭など備品はすべてお宿にご準備しています。</p>
+        </div>
+      </div>
+
+      <div class="food-card fade-in">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;29;0,width=640,height=480/image/533938402/4c5fbec0-7ae8-488a-a74a-b92816b8841a.png" alt="みかん鍋セット">
+        <div class="food-card-body">
+          <div class="food-card-title">みかん鍋セット（大島本陣茶屋）</div>
+          <div class="food-card-price">¥2,500 / 1人前　※10月〜3月</div>
+          <p class="food-card-text">周防大島名物のみかん鍋。しゃぶしゃぶ用お肉・みかん・野菜・つみれ・お餅・だし汁・雑炊用ご飯がセット。キムチ鍋もあります。</p>
+        </div>
+      </div>
+
+    </div>
+
     <!-- 出張にぎり -->
     <div class="story-box fade-in" style="margin-top:32px;">
       <span class="section-label">SPECIAL OPTION</span>
@@ -1042,7 +1123,34 @@
         ※出張費 ¥10,000 が別途かかります（交通費無料）<br>
         ※4名様以上からご利用いただけます。
       </p>
+      <a href="https://www.sushiya-taisho.com/%E5%87%BA%E5%BC%B5%E3%81%AB%E3%81%8E%E3%82%8A/" target="_blank" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:.1em;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:opacity .2s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">▶ 鮨や大将 出張にぎりの詳細はこちら</a>
     </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:var(--ink);padding:80px 0;">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:40px;">
+      <span class="section-label" style="color:var(--gold);">GALLERY</span>
+      <h2 class="section-title" style="color:var(--cream);">フォトギャラリー</h2>
+      <div class="section-rule" style="margin:0 auto 0;background:var(--gold);"></div>
+    </div>
+  </div>
+
+  <div class="gallery-grid fade-in">
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=800,height=533/image/532932244/a77e1adb-7cf0-4126-9124-be2f746d2277.jpg" alt="豊武屋敷外観" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=800,height=533/image/532932704/63b7420e-5fac-4870-981d-b5a142a8a28a.jpg" alt="屋敷" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;219;0;219,width=800,height=600/image/519747701/9b244b8c-6d19-4fdd-8228-d46714bc2469.jpg" alt="母屋" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=748;0;1751;0,width=800,height=600/image/519352675/d6c749f9-831d-4651-b114-a1cbfa0b5f8f.jpg" alt="広間" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/519747723/7aa53f4b-f9a9-41eb-a6fa-2b684594dece.jpg" alt="縁側" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/519747755/e2e5e8b4-d0d9-442a-a675-26102ee71d63.jpg" alt="部屋" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/533030091/ce56b38a-de0f-483d-80c2-13ef58374bf8.jpg" alt="屋敷内" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/519747719/d10a6a39-733f-4276-bd5d-7fa2f3c60997.jpg" alt="屋敷" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/533030678/dfa4120d-a54e-4c6a-b92f-a6cb673f033f.jpg" alt="室内" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/533029793/96dffb1f-423c-4b54-aca3-e8f95db6f5dc.jpg" alt="室内2" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;656;0;656,width=800,height=800/image/519747876/db6f1f50-5ece-4055-b9e4-494c3138361b.jpg" alt="駐車場" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=800,height=569/image/532941820/2e44d22c-5ce8-4180-958c-445e5fd4c129.jpg" alt="全景" loading="lazy"></div>
   </div>
 </section>
 
@@ -1149,6 +1257,7 @@
     <a href="#facility">施設</a>
     <a href="#price">料金</a>
     <a href="#food">お食事</a>
+    <a href="#gallery">ギャラリー</a>
     <a href="#access">アクセス</a>
   </div>
   <div class="footer-copy">© 2025 豊武屋敷. All rights reserved.</div>

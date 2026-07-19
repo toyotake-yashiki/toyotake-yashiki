@@ -1106,86 +1106,114 @@
       </tr>
     </table>
 
-    <!-- 料金計算ツール -->
-    <div style="background:var(--white);border:1px solid #d6b98a;border-radius:2px;padding:32px;margin-top:40px;" class="fade-in">
-      <span class="section-label">PRICE CALCULATOR</span>
-      <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;color:var(--dark);letter-spacing:.08em;margin-bottom:24px;">料金かんたん計算</h3>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;">
-
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-size:11px;color:var(--gold);letter-spacing:.1em;">宿泊人数</label>
-          <select id="calc-guests" onchange="calcPrice()" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
-            <option value="1">1名</option>
-            <option value="2">2名</option>
-            <option value="3">3名</option>
-            <option value="4">4名</option>
-            <option value="5">5名</option>
-            <option value="6">6名</option>
-            <option value="7">7名</option>
-            <option value="8">8名</option>
-          </select>
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-size:11px;color:var(--gold);letter-spacing:.1em;">宿泊タイプ</label>
-          <select id="calc-type" onchange="calcPrice()" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
-            <option value="weekday">平日（日〜木）</option>
-            <option value="weekend">週末・祝前日（金・土）</option>
-            <option value="peak">お盆・年末年始</option>
-          </select>
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-size:11px;color:var(--gold);letter-spacing:.1em;">宿泊数</label>
-          <select id="calc-nights" onchange="calcPrice()" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
-            <option value="1">1泊</option>
-            <option value="2">2泊（2泊目20%オフ）</option>
-            <option value="3">3泊（2泊目以降20%オフ）</option>
-            <option value="4">4泊（2泊目以降20%オフ）</option>
-          </select>
-        </div>
-
-      </div>
-
-      <div id="calc-result" style="background:var(--cream);border-left:3px solid var(--gold);padding:20px 24px;border-radius:0 2px 2px 0;">
-        <div style="font-size:12px;color:var(--gray);margin-bottom:8px;letter-spacing:.05em;">お見積もり金額</div>
-        <div id="calc-price" style="font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:var(--mid);">¥23,000</div>
-        <div id="calc-detail" style="font-size:12px;color:var(--gray);margin-top:8px;line-height:1.8;"></div>
-        <div style="font-size:11px;color:var(--gray);margin-top:12px;">※ お食事オプションは別途料金となります。</div>
-      </div>
-    </div>
-
-    <script>
-    function calcPrice() {
-      const guests = parseInt(document.getElementById('calc-guests').value);
-      const type = document.getElementById('calc-type').value;
-      const nights = parseInt(document.getElementById('calc-nights').value);
-
-      const basePrice = { weekday: 23000, weekend: 27000, peak: 30000 };
-      const base = basePrice[type];
-      const extra = guests > 2 ? (guests - 2) * 7000 : 0;
-      const night1 = base + extra;
-      const nightOther = Math.round(night1 * 0.8);
-
-      let total = night1;
-      let detail = `1泊目：¥${night1.toLocaleString()}`;
-
-      if (nights >= 2) {
-        total += nightOther * (nights - 1);
-        detail += `<br>2泊目以降（各）：¥${nightOther.toLocaleString()} × ${nights - 1}泊`;
-      }
-
-      document.getElementById('calc-price').textContent = `¥${total.toLocaleString()}`;
-      document.getElementById('calc-detail').innerHTML = detail;
-    }
-    calcPrice();
-    </script>
       <ul>
         <li>料金はすべて税込価格です。</li>
         <li>お食事は別途料金のオプションとなります。</li>
         <li>予約は公式LINE「豊武屋敷」にて承ります。</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<!-- キャンセルポリシー追加済み -->
+<section id="reserve">
+  <div class="container">
+    <span class="section-label">RESERVATION</span>
+    <h2 class="section-title">ご予約・空き確認</h2>
+    <div class="section-rule"></div>
+    <p class="section-text">
+      公式LINE「豊武屋敷」にてご予約を承ります。<br>
+      お電話でのお問い合わせもお気軽にどうぞ。
+    </p>
+
+    <div class="reserve-info">
+      <div class="reserve-info-item">
+        <div class="reserve-info-label">LINE</div>
+        <div class="reserve-info-value">公式LINE「豊武屋敷」</div>
+      </div>
+      <div class="reserve-info-item">
+        <div class="reserve-info-label">TEL</div>
+        <div class="reserve-info-value">090-1759-0777</div>
+      </div>
+      <div class="reserve-info-item">
+        <div class="reserve-info-label">締切</div>
+        <div class="reserve-info-value">ご利用日の3日前まで</div>
+      </div>
+    </div>
+
+    <div class="reserve-btns">
+      <a href="https://page.line.me/306rfgbr" target="_blank" class="btn-primary">公式LINEで予約する</a>
+      <a href="tel:09017590777" class="btn-secondary">電話で問い合わせる</a>
+    </div>
+
+    <div class="calendar-wrap">
+      <p style="font-size:15px;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;">— 料金かんたん計算 —</p>
+      <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(201,169,122,.5);border-radius:2px;padding:24px;margin-bottom:32px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊人数</label>
+            <select id="calc-guests" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+              <option value="1">1名</option>
+              <option value="2">2名</option>
+              <option value="3">3名</option>
+              <option value="4">4名</option>
+              <option value="5">5名</option>
+              <option value="6">6名</option>
+              <option value="7">7名</option>
+              <option value="8">8名</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊タイプ</label>
+            <select id="calc-type" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+              <option value="weekday">平日（日〜木）</option>
+              <option value="weekend">週末・祝前日（金・土）</option>
+              <option value="peak">お盆・年末年始</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊数</label>
+            <select id="calc-nights" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+              <option value="1">1泊</option>
+              <option value="2">2泊（2泊目20%オフ）</option>
+              <option value="3">3泊（2泊目以降20%オフ）</option>
+              <option value="4">4泊（2泊目以降20%オフ）</option>
+            </select>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.2);border-left:3px solid var(--gold);padding:16px 20px;border-radius:0 2px 2px 0;">
+          <div style="font-size:11px;color:var(--accent);margin-bottom:6px;letter-spacing:.05em;">お見積もり金額</div>
+          <div id="calc-price" style="font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:var(--cream);">¥23,000</div>
+          <div id="calc-detail" style="font-size:12px;color:rgba(247,242,234,.6);margin-top:6px;line-height:1.8;"></div>
+          <div style="font-size:11px;color:rgba(247,242,234,.4);margin-top:10px;">※ お食事オプションは別途料金となります。</div>
+        </div>
+      </div>
+
+      <script>
+      function calcPrice() {
+        const guests = parseInt(document.getElementById('calc-guests').value);
+        const type = document.getElementById('calc-type').value;
+        const nights = parseInt(document.getElementById('calc-nights').value);
+        const basePrice = { weekday: 23000, weekend: 27000, peak: 30000 };
+        const base = basePrice[type];
+        const extra = guests > 2 ? (guests - 2) * 7000 : 0;
+        const night1 = base + extra;
+        const nightOther = Math.round(night1 * 0.8);
+        let total = night1;
+        let detail = `1泊目：¥${night1.toLocaleString()}`;
+        if (nights >= 2) {
+          total += nightOther * (nights - 1);
+          detail += `<br>2泊目以降（各）：¥${nightOther.toLocaleString()} × ${nights - 1}泊`;
+        }
+        document.getElementById('calc-price').textContent = `¥${total.toLocaleString()}`;
+        document.getElementById('calc-detail').innerHTML = detail;
+      }
+      calcPrice();
+      </script>
+
+      <p style="font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;">— 予約可能状況カレンダー —</p>
+      <iframe src="https://calendar.google.com/calendar/embed?src=32309a0b277746bd7aa1d3894464f0ed7ed51689778e6761cf0b0be62f618829%40group.calendar.google.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0" style="border:0;background:transparent;"></iframe>
     </div>
   </div>
 </section>
@@ -1381,45 +1409,6 @@
       </table>
     </div>
 
-  </div>
-</section>
-
-<!-- RESERVE -->
-<!-- キャンセルポリシー追加済み -->
-<section id="reserve">
-  <div class="container">
-    <span class="section-label">RESERVATION</span>
-    <h2 class="section-title">ご予約・空き確認</h2>
-    <div class="section-rule"></div>
-    <p class="section-text">
-      公式LINE「豊武屋敷」にてご予約を承ります。<br>
-      お電話でのお問い合わせもお気軽にどうぞ。
-    </p>
-
-    <div class="reserve-info">
-      <div class="reserve-info-item">
-        <div class="reserve-info-label">LINE</div>
-        <div class="reserve-info-value">公式LINE「豊武屋敷」</div>
-      </div>
-      <div class="reserve-info-item">
-        <div class="reserve-info-label">TEL</div>
-        <div class="reserve-info-value">090-1759-0777</div>
-      </div>
-      <div class="reserve-info-item">
-        <div class="reserve-info-label">締切</div>
-        <div class="reserve-info-value">ご利用日の3日前まで</div>
-      </div>
-    </div>
-
-    <div class="reserve-btns">
-      <a href="https://page.line.me/306rfgbr" target="_blank" class="btn-primary">公式LINEで予約する</a>
-      <a href="tel:09017590777" class="btn-secondary">電話で問い合わせる</a>
-    </div>
-
-    <div class="calendar-wrap">
-      <p style="font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;">— 予約可能状況カレンダー —</p>
-      <iframe src="https://calendar.google.com/calendar/embed?src=32309a0b277746bd7aa1d3894464f0ed7ed51689778e6761cf0b0be62f618829%40group.calendar.google.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0" style="border:0;background:transparent;"></iframe>
-    </div>
   </div>
 </section>
 

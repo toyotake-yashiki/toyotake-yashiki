@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="周防大島に静かに佇む、明治建築の一棟貸しの宿。歴史を紡ぐ豊武屋敷で、暮らすように滞在する特別な時間を。">
-<meta property="og:title" content="一棟貸しの宿 豊武屋敷">
-<meta property="og:description" content="周防大島に静かに佇む、明治建築の一棟貸しの宿。">
-<title>一棟貸しの宿 豊武屋敷 | 山口県周防大島</title>
+<meta property="og:title" content="山口県周防大島: 歴史を紡ぐ一棟貸しの宿「豊武屋敷」">
+<meta property="og:description" content="周防大島に静かに佇む、明治建築の一棟貸しの宿。歴史を紡ぐ豊武屋敷で、暮らすように滞在する特別な時間を。">
+<title>山口県周防大島: 歴史を紡ぐ一棟貸しの宿「豊武屋敷」</title>
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/toyotake-yashiki/toyotake-yashiki/main/logo.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/toyotake-yashiki/toyotake-yashiki/main/logo.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
@@ -1106,7 +1106,81 @@
       </tr>
     </table>
 
-    <div class="price-notes fade-in">
+    <!-- 料金計算ツール -->
+    <div style="background:var(--white);border:1px solid #d6b98a;border-radius:2px;padding:32px;margin-top:40px;" class="fade-in">
+      <span class="section-label">PRICE CALCULATOR</span>
+      <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;color:var(--dark);letter-spacing:.08em;margin-bottom:24px;">料金かんたん計算</h3>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;">
+
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;color:var(--gold);letter-spacing:.1em;">宿泊人数</label>
+          <select id="calc-guests" onchange="calcPrice()" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+            <option value="1">1名</option>
+            <option value="2">2名</option>
+            <option value="3">3名</option>
+            <option value="4">4名</option>
+            <option value="5">5名</option>
+            <option value="6">6名</option>
+            <option value="7">7名</option>
+            <option value="8">8名</option>
+          </select>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;color:var(--gold);letter-spacing:.1em;">宿泊タイプ</label>
+          <select id="calc-type" onchange="calcPrice()" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+            <option value="weekday">平日（日〜木）</option>
+            <option value="weekend">週末・祝前日（金・土）</option>
+            <option value="peak">お盆・年末年始</option>
+          </select>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;color:var(--gold);letter-spacing:.1em;">宿泊数</label>
+          <select id="calc-nights" onchange="calcPrice()" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+            <option value="1">1泊</option>
+            <option value="2">2泊（2泊目20%オフ）</option>
+            <option value="3">3泊（2泊目以降20%オフ）</option>
+            <option value="4">4泊（2泊目以降20%オフ）</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div id="calc-result" style="background:var(--cream);border-left:3px solid var(--gold);padding:20px 24px;border-radius:0 2px 2px 0;">
+        <div style="font-size:12px;color:var(--gray);margin-bottom:8px;letter-spacing:.05em;">お見積もり金額</div>
+        <div id="calc-price" style="font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:var(--mid);">¥23,000</div>
+        <div id="calc-detail" style="font-size:12px;color:var(--gray);margin-top:8px;line-height:1.8;"></div>
+        <div style="font-size:11px;color:var(--gray);margin-top:12px;">※ お食事オプションは別途料金となります。</div>
+      </div>
+    </div>
+
+    <script>
+    function calcPrice() {
+      const guests = parseInt(document.getElementById('calc-guests').value);
+      const type = document.getElementById('calc-type').value;
+      const nights = parseInt(document.getElementById('calc-nights').value);
+
+      const basePrice = { weekday: 23000, weekend: 27000, peak: 30000 };
+      const base = basePrice[type];
+      const extra = guests > 2 ? (guests - 2) * 7000 : 0;
+      const night1 = base + extra;
+      const nightOther = Math.round(night1 * 0.8);
+
+      let total = night1;
+      let detail = `1泊目：¥${night1.toLocaleString()}`;
+
+      if (nights >= 2) {
+        total += nightOther * (nights - 1);
+        detail += `<br>2泊目以降（各）：¥${nightOther.toLocaleString()} × ${nights - 1}泊`;
+      }
+
+      document.getElementById('calc-price').textContent = `¥${total.toLocaleString()}`;
+      document.getElementById('calc-detail').innerHTML = detail;
+    }
+    calcPrice();
+    </script>
       <ul>
         <li>料金はすべて税込価格です。</li>
         <li>お食事は別途料金のオプションとなります。</li>
@@ -1194,7 +1268,8 @@
       <div style="margin-top:14px;padding:12px 16px;background:var(--cream);border-left:3px solid var(--gold);font-size:12px;color:var(--mid);line-height:2;">
         <strong style="color:var(--dark);">📌 お客様にて直接ご予約ください</strong><br>
         大島本陣茶屋　📍 山口県大島郡周防大島町西三蒲16-1　📞 0820-74-1066<br>
-        営業：11:00〜15:00 / 17:00〜21:00
+        営業：11:00〜15:00 / 17:00〜21:00<br>
+        <a href="https://www.google.com/maps/place/%E5%A4%A7%E5%B3%B6%E6%9C%AC%E9%99%A3%E8%8C%B6%E5%B1%8B/@33.954298,132.1806415,15z" target="_blank" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;display:inline-block;margin-top:6px;">🗺️ Googleマップで見る</a>
       </div>
     </div>
   </div>

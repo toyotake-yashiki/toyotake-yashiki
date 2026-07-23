@@ -1150,7 +1150,7 @@
     <div class="calendar-wrap">
       <p style="font-size:15px;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;">— 料金かんたん計算 —</p>
       <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(201,169,122,.5);border-radius:2px;padding:24px;margin-bottom:32px;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
           <div style="display:flex;flex-direction:column;gap:6px;">
             <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊人数</label>
             <select id="calc-guests" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
@@ -1165,20 +1165,20 @@
             </select>
           </div>
           <div style="display:flex;flex-direction:column;gap:6px;">
-            <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊タイプ</label>
-            <select id="calc-type" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
-              <option value="weekday">平日（日〜木）</option>
-              <option value="weekend">週末・祝前日（金・土）</option>
-              <option value="peak">お盆・年末年始</option>
-            </select>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:6px;">
             <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊数</label>
             <select id="calc-nights" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
               <option value="1">1泊</option>
               <option value="2">2泊（2泊目20%オフ）</option>
               <option value="3">3泊（2泊目以降20%オフ）</option>
               <option value="4">4泊（2泊目以降20%オフ）</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
+            <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊タイプ</label>
+            <select id="calc-type" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+              <option value="weekday">平日（日〜木）</option>
+              <option value="weekend">週末・祝前日（金・土）</option>
+              <option value="peak">お盆・年末年始</option>
             </select>
           </div>
         </div>

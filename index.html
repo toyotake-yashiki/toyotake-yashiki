@@ -540,7 +540,7 @@
 
   /* ===================== RESERVE ===================== */
   #reserve {
-    background: var(--dark);
+    background: #4a3828;
     text-align: center;
     padding: 80px 24px;
   }
@@ -948,7 +948,7 @@
       </div>
 
       <div class="facility-card fade-in">
-        <img src="./6001.JPG" alt="長屋門">
+        <img src="./IMG_5763.jpeg" alt="長屋門">
         <div class="facility-card-body">
           <div class="facility-card-title">長屋門</div>
           <p class="facility-card-text">BBQなどに使えるフリースペースを確保しています。屋根のある場所であるため、雨天でも安心です。BBQコンロや炭などの必要な備品もそろえています。</p>
@@ -1013,10 +1013,6 @@
         <div class="amenity-item-text">無料駐車場 4〜6台</div>
       </div>
       <div class="amenity-item">
-        <div class="amenity-item-icon">👶</div>
-        <div class="amenity-item-text">ベビーベッド（無料）</div>
-      </div>
-      <div class="amenity-item">
         <div class="amenity-item-icon">👕</div>
         <div class="amenity-item-text">洗濯機・洗剤</div>
       </div>
@@ -1053,20 +1049,20 @@
     <div class="price-cards fade-in" style="margin-top:32px;">
       <div class="price-card">
         <div class="price-card-label">WEEKDAY</div>
-        <div class="price-card-name">平日（日〜木）</div>
-        <div class="price-card-amount"><sup>¥</sup>23,000<sub>/棟</sub></div>
+        <div class="price-card-name">平日（日〜金）</div>
+        <div class="price-card-amount"><sup>¥</sup>25,000<sub>/棟</sub></div>
         <div class="price-card-note">2名様まで同料金</div>
       </div>
       <div class="price-card">
         <div class="price-card-label">WEEKEND</div>
-        <div class="price-card-name">週末・祝前日（金・土）</div>
-        <div class="price-card-amount"><sup>¥</sup>27,000<sub>/棟</sub></div>
+        <div class="price-card-name">週末・祝前日（土）</div>
+        <div class="price-card-amount"><sup>¥</sup>30,000<sub>/棟</sub></div>
         <div class="price-card-note">2名様まで同料金</div>
       </div>
       <div class="price-card">
         <div class="price-card-label">PEAK</div>
         <div class="price-card-name">お盆・年末年始</div>
-        <div class="price-card-amount"><sup>¥</sup>30,000<sub>/棟</sub></div>
+        <div class="price-card-amount"><sup>¥</sup>35,000<sub>/棟</sub></div>
         <div class="price-card-note">8/8〜15・12/30〜1/3</div>
       </div>
     </div>
@@ -1078,7 +1074,7 @@
       </tr>
       <tr>
         <td>3名様以上の追加料金</td>
-        <td><span class="price-highlight">＋¥7,000 / 1名につき</span>（例：大人4名 → ¥37,000〜）</td>
+        <td><span class="price-highlight">＋¥7,000 / 1名につき</span>（例：4名 → ¥39,000〜）</td>
       </tr>
       <tr>
         <td>連泊割引</td>
@@ -1086,7 +1082,7 @@
       </tr>
       <tr>
         <td>未就学児（ベッド添い寝）</td>
-        <td>無料（ベビーベッドも1台まで無料）</td>
+        <td>無料</td>
       </tr>
       <tr>
         <td>チェックイン</td>
@@ -1176,8 +1172,8 @@
           <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
             <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">宿泊タイプ</label>
             <select id="calc-type" onchange="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
-              <option value="weekday">平日（日〜木）</option>
-              <option value="weekend">週末・祝前日（金・土）</option>
+              <option value="weekday">平日（日〜金）</option>
+              <option value="weekend">週末・祝前日（土）</option>
               <option value="peak">お盆・年末年始</option>
             </select>
           </div>
@@ -1195,7 +1191,7 @@
         const guests = parseInt(document.getElementById('calc-guests').value);
         const type = document.getElementById('calc-type').value;
         const nights = parseInt(document.getElementById('calc-nights').value);
-        const basePrice = { weekday: 23000, weekend: 27000, peak: 30000 };
+        const basePrice = { weekday: 25000, weekend: 30000, peak: 35000 };
         const base = basePrice[type];
         const extra = guests > 2 ? (guests - 2) * 7000 : 0;
         const night1 = base + extra;
@@ -1226,6 +1222,44 @@
       <h2 class="section-title">お食事オプション</h2>
       <div class="section-rule"></div>
       <p class="section-text">チェックイン時にお持ち致します。ご予約の際に公式LINEにてお申し付けください。</p>
+    </div>
+
+    <!-- BBQグリル紹介 -->
+    <div class="story-box fade-in" style="margin-top:40px;">
+      <span class="section-label">BBQ OPTION</span>
+      <h3 style="font-family:'Noto Serif JP',serif;font-size:17px;color:var(--dark);letter-spacing:.08em;margin-bottom:16px;">🔥 本格Weberガスグリル（別オプション）</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px;">
+        <img src="./IMG_5758.jpeg" alt="WeberガスBBQグリル正面" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;display:block;">
+        <img src="./IMG_5761.jpeg" alt="WeberガスBBQグリル開閉" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;display:block;">
+        <img src="./IMG_5763.jpeg" alt="BBQスペース" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;display:block;">
+      </div>
+      <div style="margin-bottom:16px;">
+        <div style="font-size:22px;font-weight:700;color:#8b1a1a;font-family:'Noto Serif JP',serif;margin-bottom:8px;">＋¥3,000 <span style="font-size:13px;font-weight:400;color:var(--gray);">/ 回</span></div>
+        <p style="font-size:13px;color:var(--mid);line-height:2;">世界No.1グリルブランド「Weber Spirit」のガスグリルで、豊武屋敷の長屋門に佇みながら本格BBQをどうぞ。ボタン一つで着火、プロ仕様のSear Zone（高火力ゾーン）搭載で、お肉に美しい焼き目をつけることができます。</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:13px;">
+        <div style="background:var(--light);padding:16px;border-radius:2px;">
+          <div style="font-weight:700;color:var(--dark);margin-bottom:8px;">✅ ガスグリルのメリット</div>
+          <ul style="list-style:none;color:var(--mid);line-height:2.2;">
+            <li>🔥 着火が簡単・すぐ使える</li>
+            <li>🌡️ 温度調節がしやすい</li>
+            <li>💨 煙が少なく近隣に配慮</li>
+            <li>🧹 後片付けがラク</li>
+            <li>🌧️ 雨天でも安定した火力</li>
+          </ul>
+        </div>
+        <div style="background:var(--light);padding:16px;border-radius:2px;">
+          <div style="font-weight:700;color:var(--dark);margin-bottom:8px;">❌ 炭BBQのデメリット</div>
+          <ul style="list-style:none;color:var(--mid);line-height:2.2;">
+            <li>🕐 着火に時間がかかる</li>
+            <li>💨 煙が多く周囲に迷惑</li>
+            <li>🌡️ 温度管理が難しい</li>
+            <li>🧹 後片付けが大変</li>
+            <li>🌧️ 雨や風に弱い</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--gray);margin-top:16px;">※ご予約の際に公式LINEにてお申し付けください。</p>
     </div>
 
     <div class="food-grid" style="margin-top:40px;">

@@ -1263,7 +1263,7 @@
     </div>
 
     <div class="reserve-btns">
-      <a href="https://page.line.me/306rfgbr" target="_blank" class="btn-primary">公式LINEで予約する</a>
+      <a href="https://page.line.me/306rfgbr" target="_blank" class="btn-primary">公式LINEで問い合わせる</a>
       <a href="tel:09017590777" class="btn-secondary">電話で問い合わせる</a>
     </div>
 
@@ -1282,6 +1282,11 @@
           <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
             <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">お名前 <span style="color:#e08080;font-size:11px;">必須</span></label>
             <input id="f-name" type="text" placeholder="山田 太郎" oninput="calcPrice()" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
+          </div>
+          <!-- ご連絡先 -->
+          <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
+            <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">ご連絡先（電話番号）</label>
+            <input id="f-contact" type="tel" placeholder="090-0000-0000" style="font-family:inherit;font-size:16px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;">
           </div>
           <!-- チェックイン日 -->
           <div style="display:flex;flex-direction:column;gap:6px;">
@@ -1359,8 +1364,8 @@
 
         <!-- その他ご要望 -->
         <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
-          <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">その他ご要望・ご質問</label>
-          <textarea id="f-memo" rows="3" placeholder="アレルギー、その他ご要望など" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;resize:vertical;"></textarea>
+          <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">その他ご質問・ご要望など</label>
+          <textarea id="f-memo" rows="3" placeholder="その他ご質問、ご要望などをご記入ください" style="font-family:inherit;font-size:14px;color:var(--dark);border:1px solid #d6b98a;border-radius:2px;padding:10px 12px;background:#fff;outline:none;resize:vertical;"></textarea>
         </div>
 
         <!-- LINEで送信ボタン -->
@@ -1381,6 +1386,7 @@
         const guests = document.getElementById('calc-guests').value;
         const child = document.getElementById('f-child').value;
         const nights = document.getElementById('calc-nights').options[document.getElementById('calc-nights').selectedIndex].text;
+        const contact = document.getElementById('f-contact').value || 'なし';
         const memo = document.getElementById('f-memo').value;
 
         let opts = [];
@@ -1389,12 +1395,12 @@
         if (document.getElementById('opt-breakfast').checked) opts.push('朝食セット');
 
         const childLine = child > 0 ? `\n未就学児（添い寝）：${child}名` : '';
-        const msg = `【豊武屋敷 予約希望】\n━━━━━━━━━━\nお名前：${name}\nチェックイン日：${date}\n到着予定時間：${arrive}\n宿泊数：${nights}\n人数（大人）：${guests}名${childLine}\nオプション：${opts.length ? opts.join('・') : 'なし'}\nご要望：${memo || 'なし'}\n━━━━━━━━━━`;
+        const msg = `【豊武屋敷 予約希望】\n━━━━━━━━━━\nお名前：${name}\nご連絡先：${contact}\nチェックイン日：${date}\n到着予定時間：${arrive}\n宿泊数：${nights}\n人数（大人）：${guests}名${childLine}\nオプション：${opts.length ? opts.join('・') : 'なし'}\nご質問・ご要望：${memo || 'なし'}\n━━━━━━━━━━`;
 
         try {
           navigator.clipboard.writeText(msg);
         } catch(e) {}
-        window.open(`https://page.line.me/306rfgbr`, '_blank');
+        window.open(`https://line.me/R/oaMessage/%40306rfgbr/?` + encodeURIComponent(msg), '_blank');
       }
       calcPrice();
       </script>

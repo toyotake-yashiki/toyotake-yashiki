@@ -1277,7 +1277,7 @@
       <p style="font-size:15px;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;">— ご予約フォーム —</p>
       <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(201,169,122,.5);border-radius:2px;padding:24px;margin-bottom:32px;">
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:16px;">
           <!-- お名前 -->
           <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
             <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;">お名前 <span style="color:#e08080;font-size:11px;">必須</span></label>
@@ -1346,7 +1346,7 @@
         <!-- オプション -->
         <div style="margin-bottom:16px;">
           <label style="font-size:13px;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:10px;">オプション（複数選択可）</label>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
             <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--cream);cursor:pointer;">
               <input type="checkbox" id="opt-bbq" onchange="calcPrice()" style="width:16px;height:16px;accent-color:#b8963e;">
               BBQグリル ＋¥3,000/回
